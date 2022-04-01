@@ -86,4 +86,15 @@ public class HealthTest
 			Assert.That(health.IsDead, Is.True);
 		}
 	}
+
+	public class Replenish
+	{
+		[Test]
+		public void CurrentPointsSame_WhenFull()
+		{
+			var health = new Health(12);
+			health.Replenish(1);
+			Assert.That(health.CurrentPoints, Is.EqualTo(12));
+		}
+	}
 }
