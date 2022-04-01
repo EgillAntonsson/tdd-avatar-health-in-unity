@@ -96,5 +96,14 @@ public class HealthTest
 			health.Replenish(1);
 			Assert.That(health.CurrentPoints, Is.EqualTo(12));
 		}
+
+		[Test]
+		public void CurrentPointsReplenish_WhenNotFull()
+		{
+			var health = new Health(12);
+			health.TakeDamage(1);
+			health.Replenish(1);
+			Assert.That(health.CurrentPoints, Is.EqualTo(12));
+		}
 	}
 }
