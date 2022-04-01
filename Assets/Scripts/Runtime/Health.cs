@@ -28,6 +28,8 @@ public class Health
 		CurrentPoints -= damagePoints;
 	}
 
+	public void Replenish(int points) { }
+
 	private void ValidatePoints(int points, int lowestValidValue, string paramName)
 	{
 		if (points < lowestValidValue)
