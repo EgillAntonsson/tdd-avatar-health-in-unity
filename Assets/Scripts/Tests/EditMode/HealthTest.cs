@@ -89,21 +89,21 @@ public class HealthTest
 
 	public class Replenish
 	{
-		[Test]
-		public void CurrentPointsSame_WhenFull()
+		[TestCase(4, 4, 0, 1)]
+		[TestCase(4, 4, 3, 4)]
+		[TestCase(4, 4, 3, 3)]
+		[TestCase(3, 4, 3, 2)]
+		[TestCase(2, 4, 3, 1)]
+		public void CurrentPoints_WhenStartingPoints_ThenDamagePoints_ThenReplenishPoints(
+			int currentPoints,
+			int startingPoints,
+			int damagePoints,
+			int points)
 		{
-			var health = new Health(12);
-			health.Replenish(1);
-			Assert.That(health.CurrentPoints, Is.EqualTo(12));
-		}
-
-		[Test]
-		public void CurrentPointsReplenish_WhenNotFull()
-		{
-			var health = new Health(12);
-			health.TakeDamage(1);
-			health.Replenish(1);
-			Assert.That(health.CurrentPoints, Is.EqualTo(12));
+			var health = new Health(startingPoints);
+			health.TakeDamage(damagePoints);
+			health.Replenish(points);
+			Assert.That(health.CurrentPoints, Is.EqualTo(currentPoints));
 		}
 	}
 }
