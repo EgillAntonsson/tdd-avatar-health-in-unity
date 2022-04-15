@@ -54,7 +54,7 @@ public class HealthTest
 		[TestCase(1, 2, 3)]
 		[TestCase(1, 2, 22)]
 		[TestCase(-21, 2, 23)]
-		public void CurrentPoints_WhenStartingPoints_andDamagePoints(
+		public void CurrentPoints_WhenStartingPoints_ThenDamagePoints(
 			int currentPoints,
 			int startingPoints,
 			int damagePoints)
@@ -98,11 +98,11 @@ public class HealthTest
 			int currentPoints,
 			int startingPoints,
 			int damagePoints,
-			int points)
+			int replenishPoints)
 		{
 			var health = new Health(startingPoints);
 			health.TakeDamage(damagePoints);
-			health.Replenish(points);
+			health.Replenish(replenishPoints);
 			Assert.That(health.CurrentPoints, Is.EqualTo(currentPoints));
 		}
 	}
