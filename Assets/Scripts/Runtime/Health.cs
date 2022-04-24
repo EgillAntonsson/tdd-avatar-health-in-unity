@@ -28,7 +28,10 @@ public class Health
 		CurrentPoints -= damagePoints;
 	}
 
-	public void Replenish(int points) { }
+	public void Replenish(int replenishPoints)
+	{
+		ValidatePoints(replenishPoints, 1, nameof(replenishPoints));
+	}
 
 	private void ValidatePoints(int points, int lowestValidValue, string paramName)
 	{

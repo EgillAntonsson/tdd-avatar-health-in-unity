@@ -89,6 +89,19 @@ public class HealthTest
 
 	public class Replenish
 	{
+		[TestCase(0)]
+		[TestCase(-1)]
+		public void ThrowsError_WhenReplenishPointsIsInvalid(int replenishPoints)
+		{
+			var health = new Health(12);
+			Exception ex = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
+			delegate
+			{
+				health.Replenish(replenishPoints);
+			});
+			Assert.That(ex.Message, Does.Match("invalid").IgnoreCase);
+		}
+
 		[TestCase(4, 4, 0, 1)]
 		[TestCase(4, 4, 3, 4)]
 		[TestCase(4, 4, 3, 3)]
