@@ -30,6 +30,7 @@ public class Health
 
 	public void Replenish(int replenishPoints)
 	{
+		ValidatePoints(replenishPoints, 1);
 		CurrentPoints = Math.Min(replenishPoints + CurrentPoints, FullPoints);
 	}
 

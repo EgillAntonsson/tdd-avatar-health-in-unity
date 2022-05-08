@@ -107,5 +107,18 @@ public class HealthTest
 			health.Replenish(1);
 			Assert.That(health.CurrentPoints, Is.EqualTo(11));
 		}
+
+		[TestCase(0)]
+		[TestCase(-1)]
+		public void ThrowsError_WhenReplenishPointsIsInvalid(int replenishPoints)
+		{
+			var health = new Health(12);
+			Exception ex = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
+			delegate
+			{
+				health.Replenish(replenishPoints);
+			});
+			Assert.That(ex.Message, Does.Match("invalid").IgnoreCase);
+		}
 	}
 }
