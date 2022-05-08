@@ -9,13 +9,13 @@ public class Health
 
 	public Health(int startingPoints)
 	{
-		ValidatePoints(startingPoints, 1, nameof(startingPoints));
+		ValidatePoints(startingPoints, 1);
 		FullPoints = CurrentPoints = startingPoints;
 	}
 
 	public void TakeDamage(int damagePoints)
 	{
-		ValidatePoints(damagePoints, 1, nameof(damagePoints));
+		ValidatePoints(damagePoints, 1);
 
 		if (CurrentPoints == FullPoints
 			&& damagePoints >= FullPoints
@@ -30,14 +30,15 @@ public class Health
 
 	public void Replenish(int replenishPoints)
 	{
-		ValidatePoints(replenishPoints, 1, nameof(replenishPoints));
+		CurrentPoints = Math.Min(replenishPoints + CurrentPoints, FullPoints);
 	}
 
-	private void ValidatePoints(int points, int lowestValidValue, string paramName)
+	private void ValidatePoints(int points, int lowestValidValue)
 	{
 		if (points < lowestValidValue)
 		{
-			var message = $"Value '{points}' is invalid, it should be equal or higher than '{lowestValidValue}'";
+			var message = $"Value {points} is invalid, it should be equal or higher than {lowestValidValue}";
+			var paramName = nameof(points);
 			throw new ArgumentOutOfRangeException(paramName, message);
 		}
 	}

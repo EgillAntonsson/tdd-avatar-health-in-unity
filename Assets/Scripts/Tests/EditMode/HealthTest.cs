@@ -25,11 +25,12 @@ public class HealthTest
 		[TestCase(-1)]
 		public void ThrowsError_WhenStartingPointsIsInvalid(int startingPoints)
 		{
-			Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
+			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
 			delegate
 			{
 				new Health(startingPoints);
 			});
+			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
 		}
 
 		[Test]
@@ -69,11 +70,12 @@ public class HealthTest
 		public void ThrowsError_WhenDamagePointsIsInvalid(int damagePoints)
 		{
 			var health = new Health(12);
-			Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
+			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
 			delegate
 			{
 				health.TakeDamage(damagePoints);
 			});
+			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
 		}
 
 		[Test]
@@ -89,34 +91,21 @@ public class HealthTest
 
 	public class Replenish
 	{
-		[TestCase(0)]
-		[TestCase(-1)]
-		public void ThrowsError_WhenReplenishPointsIsInvalid(int replenishPoints)
+		[Test]
+		public void CurrentPoints_WhenFullHealth()
 		{
 			var health = new Health(12);
-			Exception ex = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
-			delegate
-			{
-				health.Replenish(replenishPoints);
-			});
-			Assert.That(ex.Message, Does.Match("invalid").IgnoreCase);
+			health.Replenish(1);
+			Assert.That(health.CurrentPoints, Is.EqualTo(12));
 		}
 
-		[TestCase(4, 4, 0, 1)]
-		[TestCase(4, 4, 3, 4)]
-		[TestCase(4, 4, 3, 3)]
-		[TestCase(3, 4, 3, 2)]
-		[TestCase(2, 4, 3, 1)]
-		public void CurrentPoints_WhenStartingPoints_ThenDamagePoints_ThenReplenishPoints(
-			int currentPoints,
-			int startingPoints,
-			int damagePoints,
-			int replenishPoints)
+		[Test]
+		public void CurrentPoints_WhenNotFullHealth()
 		{
-			var health = new Health(startingPoints);
-			health.TakeDamage(damagePoints);
-			health.Replenish(replenishPoints);
-			Assert.That(health.CurrentPoints, Is.EqualTo(currentPoints));
+			var health = new Health(12);
+			health.TakeDamage(2);
+			health.Replenish(1);
+			Assert.That(health.CurrentPoints, Is.EqualTo(11));
 		}
 	}
 }
