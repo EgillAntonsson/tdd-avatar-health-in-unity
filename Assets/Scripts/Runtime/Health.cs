@@ -44,8 +44,7 @@ public class Health
 		if (points < lowestValidValue)
 		{
 			var message = $"Value {points} is invalid, it should be equal or higher than {lowestValidValue}";
-			const string paramName = nameof(points);
-			throw new ArgumentOutOfRangeException(paramName, message);
+			throw new ArgumentOutOfRangeException(nameof(points), message);
 		}
 	}
 }
