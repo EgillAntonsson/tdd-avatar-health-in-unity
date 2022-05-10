@@ -2,7 +2,7 @@ using System;
 
 public class Health
 {
-	public const uint MaxNegativePointsForInstantKillProtection = 20;
+	private const uint MaxNegativePointsForInstantKillProtection = 20;
 	public int CurrentPoints { get; private set; }
 	public int FullPoints { get; private set; }
 	public bool IsDead => CurrentPoints < 1;
@@ -39,12 +39,12 @@ public class Health
 		CurrentPoints = Math.Min(replenishPoints + CurrentPoints, FullPoints);
 	}
 
-	private void ValidatePoints(int points, int lowestValidValue)
+	private static void ValidatePoints(int points, int lowestValidValue)
 	{
 		if (points < lowestValidValue)
 		{
 			var message = $"Value {points} is invalid, it should be equal or higher than {lowestValidValue}";
-			var paramName = nameof(points);
+			const string paramName = nameof(points);
 			throw new ArgumentOutOfRangeException(paramName, message);
 		}
 	}

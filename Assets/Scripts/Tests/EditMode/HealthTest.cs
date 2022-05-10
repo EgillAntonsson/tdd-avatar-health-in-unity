@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 
+[TestFixture]
 public class HealthTest
 {
 	public class Constructor
