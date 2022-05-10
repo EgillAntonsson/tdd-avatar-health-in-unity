@@ -13,6 +13,11 @@ public class Health
 		FullPoints = CurrentPoints = startingPoints;
 	}
 
+	public void IncreaseByUnit(int unit)
+	{
+		FullPoints += unit * 4;
+	}
+
 	public void TakeDamage(int damagePoints)
 	{
 		ValidatePoints(damagePoints, 1);

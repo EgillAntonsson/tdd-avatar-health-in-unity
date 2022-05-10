@@ -121,4 +121,15 @@ public class HealthTest
 			Assert.That(ex.Message, Does.Match("invalid").IgnoreCase);
 		}
 	}
+
+	public class IncreaseByUnit
+	{
+		[Test]
+		public void FullPointsIncrease()
+		{
+			var health = new Health(12);
+			health.IncreaseByUnit(1);
+			Assert.That(health.FullPoints, Is.EqualTo(16));
+		}
+	}
 }
