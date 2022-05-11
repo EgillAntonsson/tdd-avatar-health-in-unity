@@ -3,6 +3,8 @@ using System;
 public class Health
 {
 	private const uint MaxNegativePointsForInstantKillProtection = 20;
+	public const int PointsPerUnit = 4;
+
 	public int CurrentPoints { get; private set; }
 	public int FullPoints { get; private set; }
 	public bool IsDead => CurrentPoints < 1;
@@ -15,7 +17,7 @@ public class Health
 
 	public void IncreaseByUnit(int unit)
 	{
-		FullPoints += unit * 4;
+		FullPoints += unit * PointsPerUnit;
 	}
 
 	public void TakeDamage(int damagePoints)
