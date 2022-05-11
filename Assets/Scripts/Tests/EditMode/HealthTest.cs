@@ -125,53 +125,33 @@ public class HealthTest
 
 	public class IncreaseByUnit
 	{
-		[TestCase(8, 4, 1)]
-		[TestCase(12, 4, 2)]
-		[TestCase(16, 4, 3)]
-		public void FullPoints_WhenStartingPoints_ThenIncreaseByUnit(
-			int fullPoints,
-			int startingPoints,
-			int unit)
+		[Test]
+		public void FullPointsIncrease()
 		{
-			var health = new Health(startingPoints);
-			health.IncreaseByUnit(unit);
-			Assert.That(health.FullPoints, Is.EqualTo(fullPoints));
-		}
-
-		[TestCase(0)]
-		[TestCase(-1)]
-		public void ThrowsError_WhenUnitParamIsInvalid(int unit)
-		{
-			var health = new Health(4);
-			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
-				delegate
-				{
-					health.IncreaseByUnit(unit);
-				});
-			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
+			var health = new Health(12);
+			health.IncreaseByUnit();
+			Assert.That(health.FullPoints, Is.EqualTo(16));
 		}
 
 		[Test]
 		public void CurrentPointsIncrease()
 		{
-			var health = new Health(4);
-			health.IncreaseByUnit(1);
-			Assert.That(health.CurrentPoints, Is.EqualTo(8));
+			var health = new Health(12);
+			health.IncreaseByUnit();
+			Assert.That(health.CurrentPoints, Is.EqualTo(16));
 		}
 
-		[TestCase(7, 4, 1, 1)]
-		[TestCase(6, 4, 2, 1)]
-		[TestCase(11, 4, 1, 2)]
-		[TestCase(10, 4, 2, 2)]
-		public void CurrentPoints_WhenStartingPoints_ThenDamagePoints_ThenIncreaseByUnit(
+		[TestCase(7, 4, 1)]
+		[TestCase(6, 4, 2)]
+		[TestCase(5, 4, 3)]
+		public void CurrentPoints_WhenStartingPoints_ThenDamagePoints(
 			int currentPoints,
 			int startingPoints,
-			int damagePoints,
-			int unit)
+			int damagePoints)
 		{
 			var health = new Health(startingPoints);
 			health.TakeDamage(damagePoints);
-			health.IncreaseByUnit(unit);
+			health.IncreaseByUnit();
 			Assert.That(health.CurrentPoints, Is.EqualTo(currentPoints));
 		}
 	}

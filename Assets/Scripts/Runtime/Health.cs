@@ -15,12 +15,10 @@ public class Health
 		FullPoints = CurrentPoints = startingPoints;
 	}
 
-	public void IncreaseByUnit(int unit)
+	public void IncreaseByUnit()
 	{
-		ValidatePoints(unit, 1);
-		var pointsIncrease = unit * PointsPerUnit;
-		FullPoints += pointsIncrease;
-		CurrentPoints += pointsIncrease;
+		FullPoints += PointsPerUnit;
+		CurrentPoints += PointsPerUnit;
 	}
 
 	public void TakeDamage(int damagePoints)
