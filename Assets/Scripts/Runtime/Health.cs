@@ -17,7 +17,9 @@ public class Health
 
 	public void IncreaseByUnit(int unit)
 	{
+		ValidatePoints(unit, 1);
 		FullPoints += unit * PointsPerUnit;
+		CurrentPoints += unit * PointsPerUnit;
 	}
 
 	public void TakeDamage(int damagePoints)

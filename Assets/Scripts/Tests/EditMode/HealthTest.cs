@@ -26,11 +26,11 @@ public class HealthTest
 		[TestCase(-1)]
 		public void ThrowsError_WhenStartingPointsIsInvalid(int startingPoints)
 		{
-			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
-			delegate
-			{
+			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(), 
+				delegate 
+				{
 				new Health(startingPoints);
-			});
+				});
 			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
 		}
 
@@ -71,11 +71,11 @@ public class HealthTest
 		public void ThrowsError_WhenDamagePointsIsInvalid(int damagePoints)
 		{
 			var health = new Health(12);
-			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
-			delegate
-			{
-				health.TakeDamage(damagePoints);
-			});
+			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(), 
+				delegate 
+				{ 
+					health.TakeDamage(damagePoints);
+				});
 			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
 		}
 
@@ -114,12 +114,12 @@ public class HealthTest
 		public void ThrowsError_WhenReplenishPointsIsInvalid(int replenishPoints)
 		{
 			var health = new Health(12);
-			Exception ex = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
-			delegate
-			{
-				health.Replenish(replenishPoints);
-			});
-			Assert.That(ex.Message, Does.Match("invalid").IgnoreCase);
+			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(), 
+				delegate
+				{ 
+					health.Replenish(replenishPoints);
+				});
+			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
 		}
 	}
 
@@ -136,6 +136,43 @@ public class HealthTest
 			var health = new Health(startingPoints);
 			health.IncreaseByUnit(unit);
 			Assert.That(health.FullPoints, Is.EqualTo(fullPoints));
+		}
+
+		[TestCase(0)]
+		[TestCase(-1)]
+		public void ThrowsError_WhenUnitParamIsInvalid(int unit)
+		{
+			var health = new Health(4);
+			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(),
+				delegate
+				{
+					health.IncreaseByUnit(unit);
+				});
+			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
+		}
+
+		[Test]
+		public void CurrentPointsIncrease()
+		{
+			var health = new Health(4);
+			health.IncreaseByUnit(1);
+			Assert.That(health.CurrentPoints, Is.EqualTo(8));
+		}
+
+		[TestCase(7, 4, 1, 1)]
+		[TestCase(6, 4, 2, 1)]
+		[TestCase(11, 4, 1, 2)]
+		[TestCase(10, 4, 2, 2)]
+		public void CurrentPoints_WhenStartingPoints_ThenDamagePoints_ThenIncreaseByUnit(
+			int currentPoints,
+			int startingPoints,
+			int damagePoints,
+			int unit)
+		{
+			var health = new Health(startingPoints);
+			health.TakeDamage(damagePoints);
+			health.IncreaseByUnit(unit);
+			Assert.That(health.CurrentPoints, Is.EqualTo(currentPoints));
 		}
 	}
 }
