@@ -125,12 +125,17 @@ public class HealthTest
 
 	public class IncreaseByUnit
 	{
-		[Test]
-		public void FullPointsIncrease()
+		[TestCase(8, 4, 1)]
+		[TestCase(12, 4, 2)]
+		[TestCase(16, 4, 3)]
+		public void FullPoints_WhenStartingPoints_ThenIncreaseByUnit(
+			int fullPoints,
+			int startingPoints,
+			int unit)
 		{
-			var health = new Health(12);
-			health.IncreaseByUnit(1);
-			Assert.That(health.FullPoints, Is.EqualTo(16));
+			var health = new Health(startingPoints);
+			health.IncreaseByUnit(unit);
+			Assert.That(health.FullPoints, Is.EqualTo(fullPoints));
 		}
 	}
 }
