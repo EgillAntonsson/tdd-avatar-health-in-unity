@@ -155,4 +155,21 @@ public class HealthTest
 			Assert.That(health.CurrentPoints, Is.EqualTo(currentPoints));
 		}
 	}
+
+	public class IsMaxFullPointsReached
+	{
+		[Test]
+		public void ReturnsFalse()
+		{
+			var health = new Health(Health.MaxFullPoints / 2);
+			Assert.That(health.IsMaxFullPointsReached, Is.False);
+		}
+
+		[Test]
+		public void ReturnsTrue()
+		{
+			var health = new Health(Health.MaxFullPoints);
+			Assert.That(health.IsMaxFullPointsReached, Is.True);
+		}
+	}
 }

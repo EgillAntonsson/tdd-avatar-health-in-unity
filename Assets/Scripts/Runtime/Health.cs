@@ -4,9 +4,11 @@ public class Health
 {
 	private const uint MaxNegativePointsForInstantKillProtection = 20;
 	public const int PointsPerUnit = 4;
+	public const int MaxFullPoints = 120;
 
 	public int CurrentPoints { get; private set; }
 	public int FullPoints { get; private set; }
+	public bool IsMaxFullPointsReached => FullPoints == MaxFullPoints;
 	public bool IsDead => CurrentPoints < 1;
 
 	public Health(int startingPoints)
