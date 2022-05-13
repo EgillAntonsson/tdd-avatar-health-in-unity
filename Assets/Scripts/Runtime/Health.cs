@@ -19,6 +19,11 @@ public class Health
 
 	public void IncreaseByUnit()
 	{
+		if (IsMaxFullPointsReached)
+		{
+			var message = $"Method invocation is invalid as {nameof(IsMaxFullPointsReached)} is true";
+			throw new InvalidOperationException(message);
+		}
 		FullPoints += PointsPerUnit;
 		CurrentPoints += PointsPerUnit;
 	}

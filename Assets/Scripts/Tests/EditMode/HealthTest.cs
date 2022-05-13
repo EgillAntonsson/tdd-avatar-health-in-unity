@@ -154,6 +154,18 @@ public class HealthTest
 			health.IncreaseByUnit();
 			Assert.That(health.CurrentPoints, Is.EqualTo(currentPoints));
 		}
+
+		[Test]
+		public void ThrowsError_WhenMaxFullPointsReached()
+		{
+			var health = new Health(Health.MaxFullPoints);
+			var exception = Assert.Throws(Is.TypeOf<InvalidOperationException>(),
+				delegate
+				{
+					health.IncreaseByUnit();
+				});
+			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
+		}
 	}
 
 	public class IsMaxFullPointsReached
