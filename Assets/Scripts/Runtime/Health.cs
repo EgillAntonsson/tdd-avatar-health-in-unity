@@ -24,6 +24,7 @@ public class Health
 			var message = $"Method invocation is invalid as {nameof(IsMaxFullPointsReached)} is true";
 			throw new InvalidOperationException(message);
 		}
+
 		FullPoints += PointsPerUnit;
 		CurrentPoints += PointsPerUnit;
 	}
