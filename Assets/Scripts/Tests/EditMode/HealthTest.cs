@@ -8,7 +8,7 @@ public class HealthTest
 	{
 		[TestCase(12)]
 		[TestCase(1)]
-		public void CurrentPointsHasStartingValue(int startingPoints)
+		public void CurrentPoints_HasStartingValue(int startingPoints)
 		{
 			var health = new Health(startingPoints);
 			Assert.That(health.CurrentPoints, Is.EqualTo(startingPoints));
@@ -16,7 +16,7 @@ public class HealthTest
 
 		[TestCase(12)]
 		[TestCase(1)]
-		public void FullPointsHasStartingValue(int startingPoints)
+		public void FullPoints_HasStartingValue(int startingPoints)
 		{
 			var health = new Health(startingPoints);
 			Assert.That(health.FullPoints, Is.EqualTo(startingPoints));
@@ -27,15 +27,15 @@ public class HealthTest
 		public void ThrowsError_WhenStartingPointsIsInvalid(int startingPoints)
 		{
 			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(), 
-				delegate 
+				delegate
 				{
-				new Health(startingPoints);
+					new Health(startingPoints);
 				});
 			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
 		}
 
 		[Test]
-		public void IsDeadIsFalse()
+		public void IsDead_IsFalse()
 		{
 			var health = new Health(12);
 			Assert.That(health.IsDead, Is.False);
@@ -45,7 +45,7 @@ public class HealthTest
 	public class TakeDamage
 	{
 		[Test]
-		public void CurrentPointsDecrease()
+		public void CurrentPoints_Decrease()
 		{
 			var health = new Health(12);
 			health.TakeDamage(1);
@@ -72,8 +72,8 @@ public class HealthTest
 		{
 			var health = new Health(12);
 			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(), 
-				delegate 
-				{ 
+				delegate
+				{
 					health.TakeDamage(damagePoints);
 				});
 			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
@@ -85,6 +85,7 @@ public class HealthTest
 			var health = new Health(10);
 			health.TakeDamage(9);
 			Assert.That(health.IsDead, Is.False);
+
 			health.TakeDamage(1);
 			Assert.That(health.IsDead, Is.True);
 		}
@@ -116,7 +117,7 @@ public class HealthTest
 			var health = new Health(12);
 			var exception = Assert.Throws(Is.TypeOf<ArgumentOutOfRangeException>(), 
 				delegate
-				{ 
+				{
 					health.Replenish(replenishPoints);
 				});
 			Assert.That(exception.Message, Does.Match("invalid").IgnoreCase);
@@ -126,7 +127,7 @@ public class HealthTest
 	public class IncreaseByUnit
 	{
 		[Test]
-		public void FullPointsIncrease()
+		public void FullPoints_Increase()
 		{
 			var health = new Health(12);
 			health.IncreaseByUnit();
@@ -134,7 +135,7 @@ public class HealthTest
 		}
 
 		[Test]
-		public void CurrentPointsIncrease()
+		public void CurrentPoints_Increase()
 		{
 			var health = new Health(12);
 			health.IncreaseByUnit();

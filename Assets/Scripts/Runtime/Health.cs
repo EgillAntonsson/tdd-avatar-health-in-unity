@@ -2,7 +2,7 @@ using System;
 
 public class Health
 {
-	private const uint MaxNegativePointsForInstantKillProtection = 20;
+	public const int MaxNegativePointsForInstantKillProtection = -20;
 	public const int PointsPerUnit = 4;
 	public const int MaxFullPoints = 120;
 
@@ -35,7 +35,7 @@ public class Health
 
 		if (CurrentPoints == FullPoints
 			&& damagePoints >= FullPoints
-			&& damagePoints <= FullPoints + MaxNegativePointsForInstantKillProtection)
+			&& damagePoints <= FullPoints - MaxNegativePointsForInstantKillProtection)
 		{
 			CurrentPoints = 1;
 			return;
