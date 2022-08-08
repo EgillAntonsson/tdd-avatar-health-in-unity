@@ -157,9 +157,10 @@ public class HealthTest
 		}
 
 		[Test]
-		public void ThrowsError_WhenMaxFullPointsReached()
+		public void ThrowsError_WhenMaxUnitsReached()
 		{
-			var health = new Health(Health.MaxFullPoints);
+			var startingPointsAtMax = Health.MaxUnits * Health.PointsPerUnit;
+			var health = new Health(startingPointsAtMax);
 			var exception = Assert.Throws(Is.TypeOf<InvalidOperationException>(),
 				delegate
 				{
@@ -169,20 +170,22 @@ public class HealthTest
 		}
 	}
 
-	public class IsMaxFullPointsReached
+	public class IsMaxUnitsReached
 	{
-		[Test]
-		public void ReturnsFalse()
-		{
-			var health = new Health(Health.MaxFullPoints / 2);
-			Assert.That(health.IsMaxFullPointsReached, Is.False);
-		}
-
 		[Test]
 		public void ReturnsTrue()
 		{
-			var health = new Health(Health.MaxFullPoints);
-			Assert.That(health.IsMaxFullPointsReached, Is.True);
+			var startingPointsAtMax = Health.MaxUnits * Health.PointsPerUnit;
+			var health = new Health(startingPointsAtMax);
+			Assert.That(health.IsMaxUnitsReached, Is.True);
+		}
+
+		[Test]
+		public void ReturnsFalse()
+		{
+			var startingPointsBelowMax = Health.MaxUnits * Health.PointsPerUnit - 1;
+			var health = new Health(startingPointsBelowMax);
+			Assert.That(health.IsMaxUnitsReached, Is.False);
 		}
 	}
 }

@@ -4,11 +4,11 @@ public class Health
 {
 	public const int MaxNegativePointsForInstantKillProtection = -20;
 	public const int PointsPerUnit = 4;
-	public const int MaxFullPoints = 120;
+	public const int MaxUnits = 30;
 
 	public int CurrentPoints { get; private set; }
 	public int FullPoints { get; private set; }
-	public bool IsMaxFullPointsReached => FullPoints == MaxFullPoints;
+	public bool IsMaxUnitsReached => FullPoints / PointsPerUnit == MaxUnits;
 	public bool IsDead => CurrentPoints < 1;
 
 	public Health(int startingPoints)
@@ -19,9 +19,9 @@ public class Health
 
 	public void IncreaseByUnit()
 	{
-		if (IsMaxFullPointsReached)
+		if (IsMaxUnitsReached)
 		{
-			var message = $"Method invocation is invalid as {nameof(IsMaxFullPointsReached)} is true";
+			var message = $"Method invocation is invalid as {nameof(IsMaxUnitsReached)} is true";
 			throw new InvalidOperationException(message);
 		}
 
