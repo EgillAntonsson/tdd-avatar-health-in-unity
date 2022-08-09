@@ -13,26 +13,26 @@ public class GameConfig : ScriptableObject {
 
 	private void OnValidate()
 	{
-		var validation = Validation.Validate(StartingPoints, 1);
-		StartingPoints = ProcessValidation(validation, nameof(StartingPoints));
+		var v = Validation.Validate(StartingPoints, 1);
+		StartingPoints = ProcessValidation(v, nameof(StartingPoints));
 
-		validation = Validation.Validate(PointsPerUnit, 2);
-		PointsPerUnit = ProcessValidation(validation, nameof(PointsPerUnit));
+		v = Validation.Validate(PointsPerUnit, 2);
+		PointsPerUnit = ProcessValidation(v, nameof(PointsPerUnit));
 
-		validation = Validation.Validate(MaxNegativePointsForInstantKillProtection, Int32.MinValue, -1);
-		MaxNegativePointsForInstantKillProtection = ProcessValidation(validation, nameof(MaxNegativePointsForInstantKillProtection));
+		v = Validation.Validate(MaxNegativePointsForInstantKillProtection, Int32.MinValue, -1);
+		MaxNegativePointsForInstantKillProtection = ProcessValidation(v, nameof(MaxNegativePointsForInstantKillProtection));
 
 		double lowestMaxUnits = Math.Ceiling((double)StartingPoints / (double)PointsPerUnit);
-		validation = Validation.Validate(MaxUnits, (int)lowestMaxUnits);
-		MaxUnits = ProcessValidation(validation, nameof(MaxUnits));
+		v = Validation.Validate(MaxUnits, (int)lowestMaxUnits);
+		MaxUnits = ProcessValidation(v, nameof(MaxUnits));
 	}
 
-	private int ProcessValidation((bool IsValid, int Value, string FailMessage) validation, string propertyName)
+	private int ProcessValidation((bool IsValid, int Value, string FailMessage) v, string fieldName)
 	{
-		if (!validation.IsValid)
+		if (!v.IsValid)
 			{
-				Debug.LogWarning(validation.FailMessage + $", for '{propertyName}'. Will set value to {validation.Value}.");
+				Debug.LogWarning(v.FailMessage + $", for '{fieldName}'. Will set value to {v.Value}.");
 			}
-			return validation.Value;
+			return v.Value;
 	}
 }
