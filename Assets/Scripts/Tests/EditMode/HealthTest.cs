@@ -18,7 +18,6 @@ public class HealthTest
 	
 	public class Constructor
 	{
-
 		[TestCase(12)]
 		[TestCase(1)]
 		public void CurrentPoints_HasStartingValue(int startingPoints)
