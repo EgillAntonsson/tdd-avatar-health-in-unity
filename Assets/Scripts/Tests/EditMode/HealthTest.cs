@@ -148,24 +148,9 @@ public class HealthTest
 			Assert.That(health.CurrentPoints, Is.EqualTo(16));
 		}
 
-		[TestCase(7, 1, 1)]
-		[TestCase(6, 1, 2)]
-		[TestCase(5, 1, 3)]
-		public void CurrentPoints_WhenStartingUnits_ThenDamagePoints(
-			int currentPoints,
-			int startingUnits,
-			int damagePoints)
-		{
-			var health = MakeHealth(startingUnits);
-			health.TakeDamage(damagePoints);
-			health.IncreaseByUnit();
-			Assert.That(health.CurrentPoints, Is.EqualTo(currentPoints));
-		}
-
 		[Test]
 		public void ThrowsError_WhenMaxUnitsReached()
 		{
-			// int startingUnitsAtMax = 120; // MaxUnits * PointsPerUnit (config vars set in MakeHealth method)
 			var config = MakeConfig();
 			config.StartingUnits = config.MaxUnits;
 			var health = new Health(config);
@@ -181,11 +166,8 @@ public class HealthTest
 	public class IsMaxUnitsReached
 	{
 		[Test]
-		public void ReturnsTrue()
+		public void ReturnsTrue_WhenStartingUnitsAtMax()
 		{
-			// int startingUnitsAtMax = 120; // MaxUnits * PointsPerUnit (config vars set in MakeHealth method)
-			// var health = MakeHealth(startingUnitsAtMax);
-
 			var config = MakeConfig();
 			config.StartingUnits = config.MaxUnits;
 			var health = new Health(config);
@@ -193,9 +175,11 @@ public class HealthTest
 		}
 
 		[Test]
-		public void ReturnsFalse()
+		public void ReturnsFalse_WhenStartingUnitsNotAtMax()
 		{
-			var health = MakeHealth(1);
+			var config = MakeConfig();
+			config.StartingUnits = config.MaxUnits - 1;
+			var health = new Health(config);
 			Assert.That(health.IsMaxUnitsReached, Is.False);
 		}
 	}

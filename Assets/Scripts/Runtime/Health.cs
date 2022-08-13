@@ -36,7 +36,7 @@ public class Health
 		}
 
 		FullPoints += PointsPerUnit;
-		CurrentPoints += PointsPerUnit;
+		CurrentPoints = FullPoints;
 	}
 
 	public void TakeDamage(int damagePoints)
