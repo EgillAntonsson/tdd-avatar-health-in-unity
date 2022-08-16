@@ -23,10 +23,6 @@ public class GameConfig : ScriptableObject {
 
 		v = Validation.Validate(MaxUnits, StartingUnits);
 		MaxUnits = ProcessValidation(v, nameof(MaxUnits));
-
-		// double lowestMaxUnits = Math.Ceiling((double)StartingUnits / (double)PointsPerUnit);
-		// v = Validation.Validate(MaxUnits, (int)lowestMaxUnits);
-		// MaxUnits = ProcessValidation(v, nameof(MaxUnits));
 	}
 
 	private int ProcessValidation((bool IsValid, int Value, string FailMessage) v, string fieldName)
