@@ -8,6 +8,54 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 250
+    y: 127
+    width: 951
+    height: 773
+  m_ShowMode: 0
+  m_Title: Project Settings
+  m_RootView: {fileID: 5}
+  m_MinSize: {x: 310, y: 221}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_Maximized: 0
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 397
+    y: 87
+    width: 641
+    height: 603
+  m_ShowMode: 0
+  m_Title: Build Settings
+  m_RootView: {fileID: 7}
+  m_MinSize: {x: 640, y: 601}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_Maximized: 0
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -24,7 +72,7 @@ MonoBehaviour:
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
---- !u!114 &2
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,13 +80,11 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectSettingsWindow
   m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 9}
-  - {fileID: 3}
+  m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
@@ -61,7 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
-  m_Children: []
+  m_Children:
+  - {fileID: 4}
   m_Position:
     serializedVersion: 2
     x: 1300
@@ -85,9 +132,9 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: BuildPlayerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -100,10 +147,10 @@ MonoBehaviour:
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 16}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &5
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,11 +158,12 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
   m_EditorClassIdentifier: 
-  m_Children: []
+  m_Children:
+  - {fileID: 6}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -143,9 +191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 7}
-  - {fileID: 2}
-  - {fileID: 8}
+  - {fileID: 9}
+  - {fileID: 11}
+  - {fileID: 10}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -158,7 +206,7 @@ MonoBehaviour:
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &7
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +228,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &8
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +249,7 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &9
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,8 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 10}
-  - {fileID: 5}
+  - {fileID: 12}
+  - {fileID: 15}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -239,8 +287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 4}
-  - {fileID: 11}
+  - {fileID: 13}
+  - {fileID: 14}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -261,7 +309,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -274,11 +322,63 @@ MonoBehaviour:
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
-  - {fileID: 17}
   - {fileID: 18}
   m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &12
+  m_LastSelected: 0
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 308
+    width: 658
+    height: 489
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 20}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 658
+    y: 0
+    width: 782
+    height: 797
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 21}
+  - {fileID: 19}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,10 +387,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 13854, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 800, y: 250}
+  m_MinSize: {x: 310, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Package Manager
@@ -306,7 +406,147 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &13
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_VersionControlStates: []
+    m_SoftLockControlStates: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/Scripts/Runtime/ScriptableObjects
+    m_Globs: []
+    m_OriginalText: 
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scripts/Runtime/ScriptableObjects
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: /Users/admin/code/tdd-avatar-health-in-unity
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ba4c0000
+    m_LastClickedID: 19642
+    m_ExpandedIDs: 00000000064c0000964c0000ae4c0000b04c0000b24c000000ca9a3bffffff7f
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 14}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ffffff7f
+    m_LastClickedID: 2147483647
+    m_ExpandedIDs: ffffffff00000000064c0000964c0000ae4c0000b04c0000b24c0000ba4c0000d24c00002a4d000000ca9a3bffffff7f
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 64
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 216
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 391
+    width: 657
+    height: 468
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,7 +635,7 @@ MonoBehaviour:
       availableCategories: []
     m_SelectedOption: 0
   m_EditModeTestListGUI:
-    m_Window: {fileID: 13}
+    m_Window: {fileID: 21}
     m_NewResultList:
     - id: 1000
       uniqueId: '[TDD Avatar Health][suite]'
@@ -477,10 +717,10 @@ MonoBehaviour:
       categories: []
       parentId: 1002
       parentUniqueId: EditMode.dll/[EditMode][HealthTest+Constructor][suite]
-    - id: 1003
-      uniqueId: EditMode.dll/HealthTest+Constructor/CurrentPoints_HasStartingValue/[EditMode][HealthTest+Constructor.CurrentPoints_HasStartingValue(12)]
-      name: CurrentPoints_HasStartingValue(12)
-      fullName: HealthTest+Constructor.CurrentPoints_HasStartingValue(12)
+    - id: 1004
+      uniqueId: EditMode.dll/HealthTest+Constructor/CurrentPoints_HasStartingValue/[EditMode][HealthTest+Constructor.CurrentPoints_HasStartingValue(3)]
+      name: CurrentPoints_HasStartingValue(3)
+      fullName: HealthTest+Constructor.CurrentPoints_HasStartingValue(3)
       resultStatus: 1
       duration: 0.0147957
       messages: 
@@ -492,7 +732,7 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1005
+      parentId: 1006
       parentUniqueId: EditMode.dll/HealthTest+Constructor/[EditMode][HealthTest+Constructor.CurrentPoints_HasStartingValue][suite]
     - id: 1004
       uniqueId: EditMode.dll/HealthTest+Constructor/CurrentPoints_HasStartingValue/[EditMode][HealthTest+Constructor.CurrentPoints_HasStartingValue(1)]
@@ -527,10 +767,10 @@ MonoBehaviour:
       categories: []
       parentId: 1002
       parentUniqueId: EditMode.dll/[EditMode][HealthTest+Constructor][suite]
-    - id: 1006
-      uniqueId: EditMode.dll/HealthTest+Constructor/FullPoints_HasStartingValue/[EditMode][HealthTest+Constructor.FullPoints_HasStartingValue(12)]
-      name: FullPoints_HasStartingValue(12)
-      fullName: HealthTest+Constructor.FullPoints_HasStartingValue(12)
+    - id: 1007
+      uniqueId: EditMode.dll/HealthTest+Constructor/FullPoints_HasStartingValue/[EditMode][HealthTest+Constructor.FullPoints_HasStartingValue(3)]
+      name: FullPoints_HasStartingValue(3)
+      fullName: HealthTest+Constructor.FullPoints_HasStartingValue(3)
       resultStatus: 1
       duration: 0.0003022
       messages: 
@@ -542,7 +782,7 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1008
+      parentId: 1009
       parentUniqueId: EditMode.dll/HealthTest+Constructor/[EditMode][HealthTest+Constructor.FullPoints_HasStartingValue][suite]
     - id: 1007
       uniqueId: EditMode.dll/HealthTest+Constructor/FullPoints_HasStartingValue/[EditMode][HealthTest+Constructor.FullPoints_HasStartingValue(1)]
@@ -594,7 +834,7 @@ MonoBehaviour:
       categories: []
       parentId: 1041
       parentUniqueId: '[EditMode][/Users/admin/code/tdd-avatar-health-in-unity/Library/ScriptAssemblies/EditMode.dll][suite]'
-    - id: 1032
+    - id: 1030
       uniqueId: EditMode.dll/HealthTest+IncreaseByUnit/[EditMode][HealthTest+IncreaseByUnit.CurrentPoints_Increase]
       name: CurrentPoints_Increase
       fullName: HealthTest+IncreaseByUnit.CurrentPoints_Increase
@@ -609,7 +849,7 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1030
+      parentId: 1028
       parentUniqueId: EditMode.dll/[EditMode][HealthTest+IncreaseByUnit][suite]
     - id: 1036
       uniqueId: EditMode.dll/HealthTest+IncreaseByUnit/[EditMode][HealthTest+IncreaseByUnit.CurrentPoints_WhenStartingPoints_ThenDamagePoints][suite]
@@ -895,10 +1135,10 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1013
       parentUniqueId: EditMode.dll/[EditMode][HealthTest+TakeDamage][suite]
-    - id: 1019
-      uniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints][suite]
-      name: CurrentPoints_WhenStartingPoints_ThenDamagePoints
-      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints
+    - id: 1017
+      uniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints][suite]
+      name: CurrentPoints_WhenStartingUnits_ThenDamagePoints
+      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints
       resultStatus: 1
       duration: 0.0047436
       messages: 
@@ -909,12 +1149,12 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1013
+      parentId: 1011
       parentUniqueId: EditMode.dll/[EditMode][HealthTest+TakeDamage][suite]
-    - id: 1015
-      uniqueId: EditMode.dll/HealthTest+TakeDamage/CurrentPoints_WhenStartingPoints_ThenDamagePoints/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,2)]
-      name: CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,2)
-      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,2)
+    - id: 1013
+      uniqueId: EditMode.dll/HealthTest+TakeDamage/CurrentPoints_WhenStartingUnits_ThenDamagePoints/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,4)]
+      name: CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,4)
+      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,4)
       resultStatus: 1
       duration: 0.0003173
       messages: 
@@ -926,12 +1166,12 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1019
-      parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints][suite]
-    - id: 1016
-      uniqueId: EditMode.dll/HealthTest+TakeDamage/CurrentPoints_WhenStartingPoints_ThenDamagePoints/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,3)]
-      name: CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,3)
-      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,3)
+      parentId: 1017
+      parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints][suite]
+    - id: 1014
+      uniqueId: EditMode.dll/HealthTest+TakeDamage/CurrentPoints_WhenStartingUnits_ThenDamagePoints/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,5)]
+      name: CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,5)
+      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,5)
       resultStatus: 1
       duration: 0.0000918
       messages: 
@@ -943,12 +1183,12 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1019
-      parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints][suite]
-    - id: 1017
-      uniqueId: EditMode.dll/HealthTest+TakeDamage/CurrentPoints_WhenStartingPoints_ThenDamagePoints/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,22)]
-      name: CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,22)
-      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints(1,2,22)
+      parentId: 1017
+      parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints][suite]
+    - id: 1015
+      uniqueId: EditMode.dll/HealthTest+TakeDamage/CurrentPoints_WhenStartingUnits_ThenDamagePoints/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,24)]
+      name: CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,24)
+      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints(1,1,24)
       resultStatus: 1
       duration: 0.0000848
       messages: 
@@ -960,12 +1200,12 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1019
-      parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints][suite]
-    - id: 1018
-      uniqueId: EditMode.dll/HealthTest+TakeDamage/CurrentPoints_WhenStartingPoints_ThenDamagePoints/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints(-21,2,23)]
-      name: CurrentPoints_WhenStartingPoints_ThenDamagePoints(-21,2,23)
-      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints(-21,2,23)
+      parentId: 1017
+      parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints][suite]
+    - id: 1016
+      uniqueId: EditMode.dll/HealthTest+TakeDamage/CurrentPoints_WhenStartingUnits_ThenDamagePoints/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints(-21,1,25)]
+      name: CurrentPoints_WhenStartingUnits_ThenDamagePoints(-21,1,25)
+      fullName: HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints(-21,1,25)
       resultStatus: 1
       duration: 0.0000831
       messages: 
@@ -977,8 +1217,8 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1019
-      parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingPoints_ThenDamagePoints][suite]
+      parentId: 1017
+      parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.CurrentPoints_WhenStartingUnits_ThenDamagePoints][suite]
     - id: 1023
       uniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.IsDead_AfterTwoInvocations]
       name: IsDead_AfterTwoInvocations
@@ -1029,6 +1269,8 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1022
       parentUniqueId: EditMode.dll/HealthTest+TakeDamage/[EditMode][HealthTest+TakeDamage.ThrowsError_WhenDamagePointsIsInvalid][suite]
+<<<<<<< HEAD
+=======
     - id: 1021
       uniqueId: EditMode.dll/HealthTest+TakeDamage/ThrowsError_WhenDamagePointsIsInvalid/[EditMode][HealthTest+TakeDamage.ThrowsError_WhenDamagePointsIsInvalid(-1)]
       name: ThrowsError_WhenDamagePointsIsInvalid(-1)
